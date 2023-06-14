@@ -1,0 +1,120 @@
+#Slider {
+    margin: 54px 100px;
+}
+
+#Slider .swiper {
+    width: 100%;
+    height: 100%;
+}
+
+#Slider .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Slider .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#Slider .swiper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#Slider .content-main {
+    margin: 54px 103px;
+    position: relative;
+}
+
+#Slider .button-back {
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    z-index: 10;
+}
+
+#Slider .button-next {
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    z-index: 10;
+}
+
+#Slider .heading-content {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 59px;
+    text-align: center;
+    margin-bottom: 27px;
+}
+
+#Slider .main-dashboard {
+    height: 698px;
+    background: #ECECEC;
+    box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
+    border-radius: 16px;
+    padding: 40px 34px;
+}
+
+#Slider .pick-location {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #79747E;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 31px 0;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 55px;
+    position: relative;
+}
+
+#Slider .pick-location:hover {}
+
+#Slider .pick-label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
+    color: #1C1B1F;
+}
+
+#Slider .location-icon {
+    position: absolute;
+    right: 5%;
+}
+
+#Slider .setting-date {
+    display: flex;
+    justify-content: space-between;
+}
+
+#Slider .pick-date {
+    padding: 34px 48px;
+    background: #FFFFFF;
+    border: 1px solid #79747E;
+    border-radius: 4px;
+    font-size: 28px;
+    flex: 1;
+}
+
+#Slider .pick-date:first-child {
+    margin-right: 27px;
+}
+
+#Slider .submit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}

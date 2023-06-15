@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState, Dispatch, SetStateAction, FC } from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "./Slides.css"
 
 import { Autoplay, Pagination, Navigation } from "swiper";
+import ListLocation from '../pages/ListLocation';
 
 const images = [
     "./assets/Rectangle1.png",
@@ -19,8 +20,22 @@ const images = [
     "./assets/Rectangle9.png",
 ]
 
-const Slides = () => {
-    const [showSelectList, setShowSelectList] = useState(false);
+interface Props {
+    showSlide: boolean;
+    setShowSlide: Dispatch<SetStateAction<boolean>>;
+}
+
+const Slides:FC<Props> = (props) => {
+    const [showSelectList, setShowSelectList] = useState("0");
+    const [place, setPlace] = useState<string>("");
+    const [place2, setPlace2] = useState<string>("");
+
+    useEffect(() => {
+        props.setShowSlide(true);
+        window.onclick = () => {
+            setShowSelectList("0");
+        }
+    }, [])
 
     return (
         <div id="Slider">
@@ -49,15 +64,44 @@ const Slides = () => {
             <div className="content-main">
                 <h1 className="heading-content">Build Your Own Customized Trip Plan</h1>
                 <div className="main-dashboard">
-                    <div className="pick-location" onClick={() => setShowSelectList(!showSelectList)}>
-                        <div className="pick-label">Where do you want to go ?</div>
+                    <div className="pick-location" onClick={(e) => {
+                        e.stopPropagation();
+                        (showSelectList === "1")
+                            ?
+                            setShowSelectList("0")
+                            :
+                            setShowSelectList("1")
+                    }}>
+                        {
+                            (place !== "")
+                                ?
+                                (<div className="pick-label">{place}, Vietnam</div>)
+                                :
+                                (<div className="pick-label">Where do you want to go ?</div>)
+                        }
                         <div className="location-icon">
                             <img src="./assets/location.png" alt="" />
                         </div>
-                        {/* {showSelectList && <ListLocation />} */}
+                        {showSelectList === "1" && <ListLocation showSelectList={showSelectList} setPlace={setPlace} setPlace2={setPlace} />}
                     </div>
                     <div className="pick-location">
-                        <div className="pick-label">+ Add another destination</div>
+                        <div className="pick-label" onClick={(e) => {
+                            e.stopPropagation();
+                            (showSelectList === "2")
+                                ?
+                                setShowSelectList("0")
+                                :
+                                setShowSelectList("2")
+                        }}>
+                            {
+                                (place2 !== "")
+                                    ?
+                                    (<div className="pick-label">{place2}, Vietnam</div>)
+                                    :
+                                    (<div className="pick-label">+ Add another destination</div>)
+                            }
+                        </div>
+                        {showSelectList === "2" && <ListLocation showSelectList={showSelectList} setPlace={setPlace} setPlace2={setPlace2} />}
                     </div>
                     <div className="setting-date">
                         <input type="date" placeholder="Start Date" className="pick-date" />

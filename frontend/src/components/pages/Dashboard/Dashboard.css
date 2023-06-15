@@ -1,0 +1,53 @@
+
+#Dashboard .pick-location {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #79747E;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 31px 0;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 55px;
+    position: relative;
+}
+
+#Dashboard .pick-label {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
+    color: #1C1B1F;
+}
+
+#Dashboard .location-icon {
+    position: absolute;
+    right: 5%;
+}
+
+#Dashboard .setting-date {
+    display: flex;
+    justify-content: space-between;
+}
+
+#Dashboard .pick-date {
+    padding: 34px 48px;
+    background: #FFFFFF;
+    border: 1px solid #79747E;
+    border-radius: 4px;
+    font-size: 28px;
+    flex: 1;
+}
+
+#Dashboard .pick-date:first-child {
+    margin-right: 27px;
+}
+
+#Dashboard .submit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}

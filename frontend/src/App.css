@@ -33,6 +33,75 @@ body {
     border: none;
 }
 
-.button-main:hover {
+.button-main:hover,
+.button-back:hover {
     opacity: 0.8;
+}
+
+.content-main {
+    margin: 54px 103px;
+    position: relative;
+}
+
+.button-back {
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    z-index: 10;
+    background: rgba(47, 93, 255, 0.6);
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    color: #112211;
+    padding: 26px 73px;
+    cursor: pointer;
+    border: none;
+}
+
+.button-next {
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    z-index: 10;
+}
+
+.heading-content {
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 59px;
+    text-align: center;
+}
+
+.sub-heading-content {
+    text-align: center;
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+.main-dashboard {
+    height: 698px;
+    background: #ECECEC;
+    box-shadow: 0px 4px 16px rgba(17, 34, 17, 0.05);
+    border-radius: 16px;
+    padding: 40px 34px;
+    margin-top: 27px;
+}
+
+.link {
+    color: rgba(36, 32, 234, 1);
+    cursor: pointer;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.color-white *,
+.color-white {
+    color: #fff !important;
+}
+
+.background-color-white {
+    background-color: #fff;
 }

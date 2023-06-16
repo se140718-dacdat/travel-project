@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Plan.css";
 import { Tabs, Tab } from '@mui/material';
+import { Day1HCMHN, Play } from '../../../Models';
 
 const Plan = () => {
     const [value, setValue] = React.useState(0);
@@ -8,6 +9,57 @@ const Plan = () => {
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
     };
+
+    const handleRenderPlay = (play: Play) => {
+        switch (play.type) {
+            case "move":
+                return (
+                    <div className="timeline-info move" key={play.id}>
+                        <img src={play.image} alt="" className="timeline-img" />
+                        <div className="timeline-name">
+                            <span className='transport-status status'>
+                                <i className='pi pi-car'></i>
+                                Transportation
+                            </span>
+                            <h3>{play.name}</h3>
+                            <span className='time'><i className="pi pi-clock"></i>{play.time}</span>
+                        </div>
+                    </div>
+                )
+            case "stay":
+                return (
+                    <div className="timeline-info stay" key={play.id}>
+                        <img src={play.image} alt="" className="timeline-img" />
+                        <div className="timeline-name">
+                            <span className='stay-status status'>
+                                <i className='pi pi-car'></i>
+                                Accommodation
+                            </span>
+                            <h3>{play.name}</h3>
+                            <span className='time'><i className="pi pi-clock"></i>{play.time}</span>
+                        </div>
+                    </div>
+                )
+            case "play":
+                return (
+                    <div className="timeline-info play" key={play.id}>
+                        <img src={play.image} alt="" className="timeline-img" />
+                        <div className="timeline-name">
+                            <span className='stay-status status'>
+                                <i className='pi pi-car'></i>
+                                Attraction
+                            </span>
+                            <h3>{play.name}</h3>
+                            <span className='time'><i className="pi pi-clock"></i>{play.time}</span>
+                        </div>
+                    </div>
+                )
+            default:
+                return (
+                    <div className="eat-time"><span>{play.name}</span></div>
+                )
+        }
+    }
 
     return (
         <div id='Plan'>
@@ -29,54 +81,26 @@ const Plan = () => {
                 <div className="timeline-container">
                     <div className="timeline-day">
                         <div className="place-name">
-                            <h3>Day 1 Ho Chi Minh City, Hanoi</h3>
+                            <h3>Day {Day1HCMHN.dateNumber} Ho Chi Minh City, Hanoi</h3>
                             <span>23 Feb 2023, Thu</span>
                         </div>
                         <i className='pi pi-file'></i>
                     </div>
-                    <div className="timeline-info move">
-                        <img src="./assets/move.png" alt="" className="timeline-img" />
-                        <div className="timeline-name">
-                            <span className='transport-status status'>
-                                <i className='pi pi-car'></i>
-                                Transportation
-                            </span>
-                            <h3>Ho Chi Minh City to Hanoi</h3>
-                            <span className='time'><i className="pi pi-clock"></i>2 hr 5 min</span>
-                        </div>
-                    </div>
-                    <div className="timeline-info stay">
-                        <img src="./assets/stay.png" alt="" className="timeline-img" />
-                        <div className="timeline-name">
-                            <span className='stay-status status'>
-                                <i className='pi pi-car'></i>
-                                Accommodation
-                            </span>
-                            <h3>Stelward Prima Hotel - Former Golden Legend</h3>
-                            <span className='time'><i className="pi pi-clock"></i>1 hr</span>
-                        </div>
-                    </div>
-                    <div className="eat-time"><span>Lunch time</span></div>
-                    <div className="timeline-info play">
-                        <img src="./assets/play-img.jpg" alt="" className="timeline-img" />
-                        <div className="timeline-name">
-                            <span className='stay-status status'>
-                                <i className='pi pi-car'></i>
-                                Attraction
-                            </span>
-                            <h3>Vietnamese Women's Museum</h3>
-                            <span className='time'><i className="pi pi-clock"></i>1 hr</span>
-                        </div>
-                    </div>
+                    {
+                        Day1HCMHN.plays.map((play: Play) => handleRenderPlay(play))
+                    }
                 </div>
                 <div className="timeline-container">
                     <div className="timeline-day">
                         <div className="place-name">
-                            <h3>Day 1 Ho Chi Minh City, Hanoi</h3>
+                            <h3>Day {Day1HCMHN.dateNumber} Ho Chi Minh City, Hanoi</h3>
                             <span>23 Feb 2023, Thu</span>
                         </div>
                         <i className='pi pi-file'></i>
                     </div>
+                    {
+                        Day1HCMHN.plays.map((play: Play) => handleRenderPlay(play))
+                    }
                 </div>
                 <div className="timeline-container">
                     <div className="timeline-day">

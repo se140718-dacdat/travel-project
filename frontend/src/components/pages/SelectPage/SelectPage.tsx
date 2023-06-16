@@ -15,7 +15,7 @@ const SelectPage = () => {
                         <h1 className="heading-content">How can we help you?</h1>
                         <div className='sub-heading-content'>Start Date: 23 Feb 2023 - End Date: 27 Feb 2023</div>
                         <div className="main-dashboard">
-                            <button className='button-back button-sub' onClick={() => { setStep(1) }}>Back</button>
+                            <button className='button-back button-sub' onClick={() => { setStep(1) }}>Trở về</button>
                             <div className="row3">
                                 <div className="select-help">
                                     <img src="./assets/help1.png" alt="" />
@@ -27,7 +27,7 @@ const SelectPage = () => {
                                     <img src="./assets/help3.png" alt="" />
                                 </div>
                             </div>
-                            <button className='button-main button-next' onClick={() => { setStep(3) }}>Next</button>
+                            <button className='button-main button-next' onClick={() => { setStep(3) }}>Tiếp tục</button>
                         </div>
                     </div>
                 )
@@ -38,7 +38,7 @@ const SelectPage = () => {
                         <h1 className="heading-content">Who are you traveling with?</h1>
                         <div className='sub-heading-content'>Start Date: 23 Feb 2023 - End Date: 27 Feb 2023</div>
                         <div className="main-dashboard">
-                            <button className='button-back button-sub' onClick={() => { setStep(2) }}>Back</button>
+                            <button className='button-back button-sub' onClick={() => { setStep(2) }}>Trở về</button>
                             <div className="row4">
                                 <div className="col4">
                                     <img src="./assets/type1.png" alt="" />
@@ -53,7 +53,7 @@ const SelectPage = () => {
                                     <img src="./assets/type4.png" alt="" />
                                 </div>
                             </div>
-                            <button className='button-main button-next' onClick={() => { setStep(4) }}>Next</button>
+                            <button className='button-main button-next' onClick={() => { setStep(4) }}>Tiếp tục</button>
                         </div>
                     </div>
                 )
@@ -64,7 +64,7 @@ const SelectPage = () => {
                         <h1 className="heading-content">Which age group do you fall in?</h1>
                         <div className='sub-heading-content'>Start Date: 23 Feb 2023 - End Date: 27 Feb 2023</div>
                         <div className="main-dashboard">
-                            <button className='button-back button-sub' onClick={() => { setStep(3) }}>Back</button>
+                            <button className='button-back button-sub' onClick={() => { setStep(3) }}>Trở về</button>
                             <div className="col2-3">
                                 <h2>MALE</h2>
                                 <div className="row3-2">
@@ -91,25 +91,25 @@ const SelectPage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <button className='button-main button-next' onClick={() => { navigate("/plan") }}>Next</button>
+                            <button className='button-main button-next' onClick={() => { navigate("/plan") }}>Tiếp tục</button>
                         </div>
                     </div>
                 )
             default:
                 return (
                     <div className="content-main">
-                        <h1 className="heading-content">Build Your Own Customized Trip Plan</h1>
-                        <div className='sub-heading-content'>Start Date: 23 Feb 2023 - End Date: 27 Feb 2023</div>
+                        <h1 className="heading-content">Xây Dựng Kế Hoạch Cho Chuyến Đi Của Riêng Bạn</h1>
+                        <div className='sub-heading-content'>Bắt đầu: 23/01/2023 - Kết thúc: 28/01/2023</div>
                         <div className="main-dashboard drop-shadow">
-                            <button className='button-back button-sub' onClick={() => { navigate("/") }}>Back</button>
+                            <button className='button-back button-sub' onClick={() => { navigate("/") }}>Trở về</button>
                             <div className="row-73">
                                 <div className="places col-7">
                                     <div className="place">
                                         <div className="place-name">
-                                            <div className='city-name'>Ho Chi Minh City, Vietnam</div>
+                                            <div className='city-name'>Thành Phố Hồ Chí Minh</div>
                                             <span>Start Date: 23 Feb 2023</span>
                                         </div>
-                                        <a className="place-edit link">(Edit home city)</a>
+                                        <a className="place-edit link">(Chỉnh sửa)</a>
                                         <div className="place-icon">
                                             <img src="./assets/location.png" alt="" />
                                         </div>
@@ -121,7 +121,7 @@ const SelectPage = () => {
                                         </div>
                                         <div className="dash-left"></div>
                                         <div className="night color-white">
-                                            4 Nights
+                                            4 Đêm
                                         </div>
                                     </div>
                                     <div className="place">
@@ -129,7 +129,7 @@ const SelectPage = () => {
                                             <div className='city-name'>Ho Chi Minh City, Vietnam</div>
                                             <span>Start Date: 23 Feb 2023</span>
                                         </div>
-                                        <a className="place-edit link">(Edit home city)</a>
+                                        <a className="place-edit link">(Chỉnh sửa)</a>
                                         <div className="place-icon">
                                             <img src="./assets/location.png" alt="" />
                                         </div>
@@ -139,7 +139,7 @@ const SelectPage = () => {
                                     <img src="./assets/view-on-map.png" alt="" />
                                 </div>
                             </div>
-                            <button className='button-main button-next' onClick={() => { setStep(2) }}>Next</button>
+                            <button className='button-main button-next' onClick={() => { setStep(2) }}>Tiếp tục</button>
                         </div>
                     </div>
                 )

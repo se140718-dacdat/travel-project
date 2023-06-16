@@ -117,4 +117,8 @@ body {
     justify-content: center;
 }
 
+.hover:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
 

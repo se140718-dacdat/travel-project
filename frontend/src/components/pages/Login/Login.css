@@ -1,0 +1,42 @@
+#Login {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin: 70px 200px 0;
+}
+
+#Login .col1,
+#Login .col2 {
+    width: 40%;
+}
+
+#Login .col1 > * {
+    margin-bottom: 70px;
+}
+
+#Login .title h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+#Login .title span {
+    font-weight: 200;
+    opacity: 0.8;
+}
+
+#Login .form-input * {
+    display: block;
+    width: 100%;
+    margin-bottom: 24px;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+#Login .button-login {
+    width: 100%;
+    padding: 20px;
+    border-radius: 4px;
+    background-color: rgba(155, 224, 200, 0.83);
+    border: none;
+    font-weight: 700;
+}

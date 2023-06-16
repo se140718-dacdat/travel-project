@@ -6,14 +6,14 @@ const Footer = () => {
         <div className="footer">
             <div className="footer-contact">
                 <div className="contact-email">
-                    <h1 className="contact-heading">Subscribe Newsletter</h1>
-                    <p className="contact-title">The Travel</p>
+                    <h1 className="contact-heading">Theo Dõi<br/> Bản Tin</h1>
+                    <p className="contact-title">Du Lịch</p>
                     <p className="contact-desc">
-                        Get inspired! Receive travel discounts, tips and behind the scenes stories.
+                        Truyền cảm hứng! Nhận giảm giá du lịch, lời khuyên và những câu chuyện đằng sau.
                     </p>
                     <div className="mail-input">
-                        <input type="text" placeholder="Your email address" />
-                        <button>Subscribe</button>
+                        <input type="text" placeholder="Email của bạn" />
+                        <button>Theo dõi</button>
                     </div>
                 </div>
                 <img src="./assets/mailbox.png" alt="" className="contact-img" />
@@ -23,35 +23,35 @@ const Footer = () => {
                     <img src="./assets/logo.png" alt="" />
                 </div>
                 <div className="item-footer">
-                    <div className="head-title">Our Destinations</div>
-                    <div className="desc-title">VietNam</div>
-                    <div className="desc-title">Japan</div>
-                    <div className="desc-title">France</div>
+                    <div className="head-title">Điểm Đến</div>
+                    <div className="desc-title">Việt Nam</div>
+                    <div className="desc-title">Nhật Bản</div>
+                    <div className="desc-title">Pháp</div>
                     <div className="desc-title">Iceland</div>
                 </div>
                 <div className="item-footer">
-                    <div className="head-title">Our Activities</div>
-                    <div className="desc-title">Mountain climbing</div>
-                    <div className="desc-title">Cruising & sailing</div>
-                    <div className="desc-title">Multi-activities</div>
-                    <div className="desc-title">Kayaing</div>
+                    <div className="head-title">Hoạt Động</div>
+                    <div className="desc-title">Leo Núi</div>
+                    <div className="desc-title">Du Thuyền & Chèo Thuyền</div>
+                    <div className="desc-title">Các Hoạt Động Khác</div>
+                    <div className="desc-title">Chèo Thuyền Kayak</div>
                 </div>
                 <div className="item-footer">
-                    <div className="head-title">Travel Blogs</div>
+                    <div className="head-title">Blogs Du Lịch</div>
                     <div className="desc-title">Nha Trang Travel Guide</div>
                     <div className="desc-title">Sri Lanks Travel Guide</div>
                     <div className="desc-title">Peru Travel Guide</div>
                     <div className="desc-title">Tokyo Travel Guide</div>
                 </div>
                 <div className="item-footer">
-                    <div className="head-title">About Us</div>
-                    <div className="desc-title">Our Story</div>
-                    <div className="desc-title">Work with us</div>
+                    <div className="head-title">Về Chúng Tôi</div>
+                    <div className="desc-title">Câu Chuyện Của Chúng Tôi</div>
+                    <div className="desc-title">Hợp Tác Với Chúng Tôi</div>
                 </div>
                 <div className="item-footer">
-                    <div className="head-title">Contact Us</div>
-                    <div className="desc-title">Our Story</div>
-                    <div className="desc-title">Work with us</div>
+                    <div className="head-title">Liên Hệ</div>
+                    <div className="desc-title">+0123456789</div>
+                    <div className="desc-title">tripwise@gmail.com</div>
                 </div>
             </div>
             <div className="copy-right">Copyright © 2023 Tripwise</div>

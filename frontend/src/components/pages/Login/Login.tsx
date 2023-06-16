@@ -47,14 +47,14 @@ const Login:FC<Props> = (props) => {
                     <img src="./assets/logo.png" alt="#" />
                 </div>
                 <div className="title">
-                    <h1>Login</h1>
-                    <span>Login to access your Golobe account</span>
+                    <h1>Đăng Nhập</h1>
+                    <span>Đăng nhập để truy cập tài khoản Golobe của bạn</span>
                 </div>
                 <div className="form-input">
-                    <input type="text" placeholder='Username' onChange={(e) => setUsername(e.target.value)} />
-                    <input type="password" placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
+                    <input type="text" placeholder='Tên người dùng' onChange={(e) => setUsername(e.target.value)} />
+                    <input type="password" placeholder='Mật khẩu' onChange={(e) => setPassword(e.target.value)} />
                 </div>
-                <button className="button-login hover" onClick={handleLogin}>Login</button>
+                <button className="button-login hover" onClick={handleLogin}>Đăng Nhập</button>
             </div>
             <div className="col2">
                 <img src="./assets/login-img.png" alt="" />

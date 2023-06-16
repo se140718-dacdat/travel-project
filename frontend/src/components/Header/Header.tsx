@@ -1,4 +1,4 @@
-import React, { useState, FC, Dispatch, SetStateAction } from 'react'
+import React, { useState, FC, Dispatch, SetStateAction, useEffect } from 'react'
 import "./Header.css"
 import { useNavigate } from 'react-router-dom'
 import { Account } from '../../Models';
@@ -6,17 +6,24 @@ import { Account } from '../../Models';
 interface Props {
     isLogin: boolean;
     setIsLogin: Dispatch<SetStateAction<boolean>>;
-    account: Account | undefined;
-    setAccount: Dispatch<SetStateAction<Account | undefined>>;
 }
 
 const Header: FC<Props> = (props) => {
     const [isLogout, setIsLogout] = useState<boolean>(false);
     const navigate = useNavigate();
+    const [account, setAccount] = useState<Account>();
+
+    useEffect(() => {
+      const storedAccount = localStorage.getItem('account');
+      if (storedAccount) {
+        const parsedAccount = JSON.parse(storedAccount);
+        setAccount(parsedAccount);
+      }
+    }, [])
 
     const handleLogout = () => {
         localStorage.removeItem('account');
-        props.setAccount(undefined)
+        setAccount(undefined)
     }
 
     return (
@@ -27,15 +34,15 @@ const Header: FC<Props> = (props) => {
             <div className="header_menu">
                 <div className="menu-item">
                     <img src="./assets/trip.png" alt="" />
-                    <div className="title">Trip Planer</div>
+                    <div className="title">Kế hoạch</div>
                 </div>
                 <div className="menu-item">
                     <img src="./assets/location.png" alt="" />
-                    <div className="title">Itineraries</div>
+                    <div className="title">Hành trình</div>
                 </div>
                 <div className="menu-item" onClick={() => { navigate("/tour") }}>
                     <img src="./assets/tour.png" alt="" />
-                    <div className="title">Tours</div>
+                    <div className="title">Du lịch</div>
                 </div>
                 <div className="menu-item">
                     <img src="./assets/camera.png" alt="" />
@@ -43,22 +50,22 @@ const Header: FC<Props> = (props) => {
                 </div>
             </div>
             {
-                (props.account)
+                (account)
                     ?
                     (
                         <div className="header_avt" onClick={() => { (!isLogout) ? setIsLogout(true) : setIsLogout(false) }}>
                             <div className="favourite-item">
                                 <img src="./assets/heart.png" alt="" />
-                                <div className="title">Favourites</div>
+                                <div className="title">Yêu thích</div>
                             </div>
                             <div className="avatar-item">
                                 <img src="./assets/avatar.png" alt="" />
-                                <div className="title">{props.account.name}</div>
+                                <div className="title">{account?.name}</div>
                                 {
                                     (isLogout)
                                         ? (
                                             <div className="logout">
-                                                <button className="button-logout" onClick={handleLogout}>Logout</button>
+                                                <button className="button-logout" onClick={handleLogout}>Đăng Xuất</button>
                                             </div>
                                         )
                                         : null
@@ -70,7 +77,7 @@ const Header: FC<Props> = (props) => {
                     (
                         <div className="header_avt">
                             <div className="avatar-item">
-                                <div className="title" onClick={() => { props.setIsLogin(true) }}>Login</div>
+                                <div className="title" onClick={() => { props.setIsLogin(true) }}>Đăng Nhập</div>
                             </div>
                         </div>
                     )

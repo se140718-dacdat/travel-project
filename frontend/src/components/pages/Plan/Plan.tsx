@@ -1,10 +1,55 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Plan.css";
 import { Tabs, Tab } from '@mui/material';
-import { Day1HCMHN, Play } from '../../../Models';
+import { Day1HCMHN, Place, Play } from '../../../Models';
+import { differenceInDays, parse } from 'date-fns';
+
 
 const Plan = () => {
     const [value, setValue] = React.useState(0);
+    const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
+    const [place, setPlace] = useState<Place>();
+    const [place2, setPlace2] = useState<Place>();
+
+    useEffect(() => {
+        const storedPlace = localStorage.getItem('place');
+        const storedPlace2 = localStorage.getItem('place2');
+        const storedStartDate = localStorage.getItem('startDate');
+        const storedEndDate = localStorage.getItem('endDate');
+
+        if (storedPlace) {
+            const parsedAccount = JSON.parse(storedPlace);
+            setPlace(parsedAccount);
+        }
+
+        if (storedPlace2 !== undefined && storedPlace2) {
+            const parsedAccount = JSON.parse(storedPlace2);
+            setPlace2(parsedAccount);
+        }
+
+        if (storedStartDate) {
+            const parsedAccount = JSON.parse(storedStartDate);
+            setStartDate(parsedAccount);
+        }
+
+        if (storedEndDate) {
+            const parsedAccount = JSON.parse(storedEndDate);
+            setEndDate(parsedAccount);
+        }
+    }, [])
+
+
+    const countDates = () => {
+        if (startDate && endDate) {
+            const parsedStartDate = parse(startDate, 'yyyy-MM-dd', new Date());
+            const parsedEndDate = parse(endDate, 'yyyy-MM-dd', new Date());
+
+            const dateCount = differenceInDays(parsedEndDate, parsedStartDate) + 1;
+            return dateCount;
+        }
+        return 0;
+    };
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
@@ -19,7 +64,7 @@ const Plan = () => {
                         <div className="timeline-name">
                             <span className='transport-status status'>
                                 <i className='pi pi-car'></i>
-                                Transportation
+                                Di chuyển
                             </span>
                             <h3>{play.name}</h3>
                             <span className='time'><i className="pi pi-clock"></i>{play.time}</span>
@@ -33,7 +78,7 @@ const Plan = () => {
                         <div className="timeline-name">
                             <span className='stay-status status'>
                                 <i className='pi pi-car'></i>
-                                Accommodation
+                                Chỗ ở
                             </span>
                             <h3>{play.name}</h3>
                             <span className='time'><i className="pi pi-clock"></i>{play.time}</span>
@@ -47,7 +92,7 @@ const Plan = () => {
                         <div className="timeline-name">
                             <span className='stay-status status'>
                                 <i className='pi pi-car'></i>
-                                Attraction
+                                Hoạt động
                             </span>
                             <h3>{play.name}</h3>
                             <span className='time'><i className="pi pi-clock"></i>{play.time}</span>
@@ -64,15 +109,15 @@ const Plan = () => {
     return (
         <div id='Plan'>
             <div className="edit-plan">
-                <div className="plan-description">5 Day Trip to Hanoi from Ho Chi Minh City <img src="./assets/pencil.png" alt="" /></div>
+                <div className="plan-description">{countDates()} ngày du lịch từ Hồ Chí Minh đến {place?.name}<img src="./assets/pencil.png" alt="" /></div>
                 <div className="plan-handle">
-                    <button className="button-sub mr-24">BOOK</button>
-                    <button className="button-main">EDIT PLAN</button>
+                    <button className="button-sub mr-24">Chỉnh sửa</button>
+                    <button className="button-main">Xác nhận</button>
                 </div>
             </div>
             <Tabs className='tab' value={value} onChange={handleChange}>
-                <Tab className='tab-label' label="OVERVIEW" />
-                <Tab className='tab-label' label="EDITABLE VIEW" />
+                <Tab className='tab-label' label="TỔNG QUAN" />
+                <Tab className='tab-label' label="CHỈNH SỬA" />
             </Tabs>
             <div className="plan-container">
                 <div className="icon-back">

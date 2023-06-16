@@ -14,27 +14,14 @@ import Login from './components/pages/Login/Login';
 
 function App() {
   const [isLogin, setIsLogin] = useState<boolean>(false)
-  const [place, setPlace] = useState<Place>();
-  const [place2, setPlace2] = useState<Place>();
-  const [start, setStart] = useState<string>("");
-  const [end, setEnd] = useState<string>("");
-  const [account, setAccount] = useState<Account>();
-
-  useEffect(() => {
-    const storedAccount = localStorage.getItem('account');
-    if (storedAccount) {
-      const parsedAccount = JSON.parse(storedAccount);
-      setAccount(parsedAccount);
-    }
-  }, [])
 
   return (
     <div className="App">
       {(!isLogin)
         ? (
-          <div><Header isLogin={isLogin} setIsLogin={setIsLogin} account={account} setAccount={setAccount}/>
+          <div><Header isLogin={isLogin} setIsLogin={setIsLogin} />
             <Routes>
-              <Route path='/' element={<><Slides /><Dashboard place={place} setPlace={setPlace} place2={place2} setPlace2={setPlace2} setStart={setStart} setEnd={setEnd} start={start} end={end} /></>}></Route>;
+              <Route path='/' element={<><Slides /><Dashboard/></>}></Route>;
               <Route path='/select' element={<><Slides /><SelectPage /></>}></Route>;
               <Route path='/plan' element={<Plan />}></Route>;
             </Routes>

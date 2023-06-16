@@ -1,11 +1,56 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./SelectPage.css";
 import { useNavigate } from 'react-router-dom';
+import { Place } from '../../../Models';
+import { differenceInDays, parse } from 'date-fns';
+
 
 const SelectPage = () => {
     const navigate = useNavigate();
 
     const [step, setStep] = useState<number>(1);
+    const [startDate, setStartDate] = useState<string>("");
+    const [endDate, setEndDate] = useState<string>("");
+    const [place, setPlace] = useState<Place>();
+    const [place2, setPlace2] = useState<Place>();
+
+    useEffect(() => {
+        const storedPlace = localStorage.getItem('place');
+        const storedPlace2 = localStorage.getItem('place2');
+        const storedStartDate = localStorage.getItem('startDate');
+        const storedEndDate = localStorage.getItem('endDate');
+
+        if (storedPlace) {
+            const parsedAccount = JSON.parse(storedPlace);
+            setPlace(parsedAccount);
+        }
+
+        if (storedPlace2 !== undefined && storedPlace2) {
+            const parsedAccount = JSON.parse(storedPlace2);
+            setPlace2(parsedAccount);
+        }
+
+        if (storedStartDate) {
+            const parsedAccount = JSON.parse(storedStartDate);
+            setStartDate(parsedAccount);
+        }
+
+        if (storedEndDate) {
+            const parsedAccount = JSON.parse(storedEndDate);
+            setEndDate(parsedAccount);
+        }
+    }, [])
+
+    const countDates = () => {
+        if (startDate && endDate) {
+            const parsedStartDate = parse(startDate, 'yyyy-MM-dd', new Date());
+            const parsedEndDate = parse(endDate, 'yyyy-MM-dd', new Date());
+
+            const dateCount = differenceInDays(parsedEndDate, parsedStartDate) + 1;
+            return dateCount;
+        }
+        return 0;
+    };
 
     const handleRenderStep = () => {
         switch (step) {
@@ -13,7 +58,7 @@ const SelectPage = () => {
                 return (
                     <div className="content-main">
                         <h1 className="heading-content">How can we help you?</h1>
-                        <div className='sub-heading-content'>Start Date: 23 Feb 2023 - End Date: 27 Feb 2023</div>
+                        <div className='sub-heading-content'>Start Date: {startDate} - End Date: {endDate}</div>
                         <div className="main-dashboard">
                             <button className='button-back button-sub' onClick={() => { setStep(1) }}>Trở về</button>
                             <div className="row3">
@@ -36,7 +81,7 @@ const SelectPage = () => {
                 return (
                     <div className="content-main">
                         <h1 className="heading-content">Who are you traveling with?</h1>
-                        <div className='sub-heading-content'>Start Date: 23 Feb 2023 - End Date: 27 Feb 2023</div>
+                        <div className='sub-heading-content'>Start Date: {startDate} - End Date: {endDate}</div>
                         <div className="main-dashboard">
                             <button className='button-back button-sub' onClick={() => { setStep(2) }}>Trở về</button>
                             <div className="row4">
@@ -62,7 +107,7 @@ const SelectPage = () => {
                 return (
                     <div className="content-main">
                         <h1 className="heading-content">Which age group do you fall in?</h1>
-                        <div className='sub-heading-content'>Start Date: 23 Feb 2023 - End Date: 27 Feb 2023</div>
+                        <div className='sub-heading-content'>Start Date: {startDate} - End Date: {endDate}</div>
                         <div className="main-dashboard">
                             <button className='button-back button-sub' onClick={() => { setStep(3) }}>Trở về</button>
                             <div className="col2-3">
@@ -99,15 +144,15 @@ const SelectPage = () => {
                 return (
                     <div className="content-main">
                         <h1 className="heading-content">Xây Dựng Kế Hoạch Cho Chuyến Đi Của Riêng Bạn</h1>
-                        <div className='sub-heading-content'>Bắt đầu: 23/01/2023 - Kết thúc: 28/01/2023</div>
+                        <div className='sub-heading-content'>Bắt đầu: {startDate} - Kết thúc: {endDate}</div>
                         <div className="main-dashboard drop-shadow">
                             <button className='button-back button-sub' onClick={() => { navigate("/") }}>Trở về</button>
                             <div className="row-73">
                                 <div className="places col-7">
                                     <div className="place">
                                         <div className="place-name">
-                                            <div className='city-name'>Thành Phố Hồ Chí Minh</div>
-                                            <span>Start Date: 23 Feb 2023</span>
+                                            <div className='city-name'>Thành phố Hồ Chí Minh</div>
+                                            <span>Ngày bắt đầu: {startDate}</span>
                                         </div>
                                         <a className="place-edit link">(Chỉnh sửa)</a>
                                         <div className="place-icon">
@@ -116,18 +161,18 @@ const SelectPage = () => {
                                     </div>
                                     <div className="place-middle">
                                         <div className="place-name color-white">
-                                            <div className='city-name'>Ho Chi Minh City, Vietnam</div>
-                                            <span>Start Date: 23 Feb 2023</span>
+                                            <div className='city-name'>Thành phố {place?.name}</div>
+                                            <span>{startDate}</span>
                                         </div>
                                         <div className="dash-left"></div>
                                         <div className="night color-white">
-                                            4 Đêm
+                                            {countDates()} Đêm
                                         </div>
                                     </div>
                                     <div className="place">
                                         <div className="place-name">
-                                            <div className='city-name'>Ho Chi Minh City, Vietnam</div>
-                                            <span>Start Date: 23 Feb 2023</span>
+                                            <div className='city-name'>Thành phố Hồ Chí Minh</div>
+                                            <span>Ngày kết thúc: {endDate}</span>
                                         </div>
                                         <a className="place-edit link">(Chỉnh sửa)</a>
                                         <div className="place-icon">

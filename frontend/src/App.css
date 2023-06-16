@@ -33,6 +33,18 @@ body {
     border: none;
 }
 
+.button-sub {
+    background: rgba(47, 93, 255, 0.6);
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 39px;
+    color: #112211;
+    padding: 26px 73px;
+    cursor: pointer;
+    border: none;
+}
+
 .button-main:hover,
 .button-back:hover {
     opacity: 0.8;
@@ -48,15 +60,6 @@ body {
     top: 50%;
     left: -5%;
     z-index: 10;
-    background: rgba(47, 93, 255, 0.6);
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 39px;
-    color: #112211;
-    padding: 26px 73px;
-    cursor: pointer;
-    border: none;
 }
 
 .button-next {
@@ -105,3 +108,13 @@ body {
 .background-color-white {
     background-color: #fff;
 }
+
+.mr-24 {
+    margin-right: 24px;
+}
+
+.MuiTabs-flexContainer {
+    justify-content: center;
+}
+
+

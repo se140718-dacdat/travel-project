@@ -60,7 +60,7 @@ const Dashboard = () => {
                         <input type="date" placeholder="End Date" className="pick-date" />
                     </div>
                     <div className="submit">
-                        <button className='button-main' onClick={() => { navigate("/plan") }}>Start planning</button>
+                        <button className='button-main' onClick={() => { navigate("/select") }}>Start planning</button>
                     </div>
                 </div>
             </div>

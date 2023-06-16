@@ -15,7 +15,7 @@ const SelectPage = () => {
                         <h1 className="heading-content">How can we help you?</h1>
                         <div className='sub-heading-content'>Start Date: 23 Feb 2023 - End Date: 27 Feb 2023</div>
                         <div className="main-dashboard">
-                            <button className='button-back' onClick={() => { setStep(1) }}>Back</button>
+                            <button className='button-back button-sub' onClick={() => { setStep(1) }}>Back</button>
                             <div className="row3">
                                 <div className="select-help">
                                     <img src="./assets/help1.png" alt="" />
@@ -38,7 +38,7 @@ const SelectPage = () => {
                         <h1 className="heading-content">Who are you traveling with?</h1>
                         <div className='sub-heading-content'>Start Date: 23 Feb 2023 - End Date: 27 Feb 2023</div>
                         <div className="main-dashboard">
-                            <button className='button-back' onClick={() => { setStep(2) }}>Back</button>
+                            <button className='button-back button-sub' onClick={() => { setStep(2) }}>Back</button>
                             <div className="row4">
                                 <div className="col4">
                                     <img src="./assets/type1.png" alt="" />
@@ -64,7 +64,7 @@ const SelectPage = () => {
                         <h1 className="heading-content">Which age group do you fall in?</h1>
                         <div className='sub-heading-content'>Start Date: 23 Feb 2023 - End Date: 27 Feb 2023</div>
                         <div className="main-dashboard">
-                            <button className='button-back' onClick={() => { setStep(3) }}>Back</button>
+                            <button className='button-back button-sub' onClick={() => { setStep(3) }}>Back</button>
                             <div className="col2-3">
                                 <h2>MALE</h2>
                                 <div className="row3-2">
@@ -91,19 +91,17 @@ const SelectPage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <button className='button-main button-next' onClick={() => { setStep(5) }}>Next</button>
+                            <button className='button-main button-next' onClick={() => { navigate("/plan") }}>Next</button>
                         </div>
                     </div>
                 )
-
-
             default:
                 return (
                     <div className="content-main">
                         <h1 className="heading-content">Build Your Own Customized Trip Plan</h1>
                         <div className='sub-heading-content'>Start Date: 23 Feb 2023 - End Date: 27 Feb 2023</div>
                         <div className="main-dashboard drop-shadow">
-                            <button className='button-back' onClick={() => { navigate("/") }}>Back</button>
+                            <button className='button-back button-sub' onClick={() => { navigate("/") }}>Back</button>
                             <div className="row-73">
                                 <div className="places col-7">
                                     <div className="place">

@@ -115,6 +115,10 @@
     border-left: 4px solid #10A563;
 }
 
+#Plan .eat {
+    border-left: 4px solid yellow;
+}
+
 #Plan .status {
     padding: 6px 24px;
     border-radius: 25px;
@@ -131,9 +135,14 @@
     color: #AD735A;
 }
 
-#Plan .stay-status {
+#Plan .play-status {
     background-color: #EEFFF7;
     color: #10A563;
+}
+
+#Plan .eat-status {
+    background-color: #FEF5CF;
+    color: #333333;
 }
 
 

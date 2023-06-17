@@ -1,3 +1,5 @@
+import { TimelineDN, TimelineNT } from "./data";
+
 const HCMToHN: Play = {
     id: 1,
     type: "move",
@@ -39,12 +41,14 @@ export interface Play {
 export interface Timeline {
     id: number;
     dateNumber: number;
-    plays: Play[]
+    plays: Play[];
+    place: string;
 }
 
 export const Day1HCMHN: Timeline = {
     id: 1,
     dateNumber: 1,
+    place: "Hà Nội",
     plays: [HCMToHN, PrimaHotel, Lunch, Museum]
 }
 
@@ -53,36 +57,40 @@ export interface Place {
     name: string;
     things: number;
     image: string;
+    timelines: Timeline[];
 }
 
 export const Place1: Place = {
     id: 1,
     name: "Nha Trang",
     things: 87,
-    image: "./assets/nhatrang.jpg"
+    image: "./assets/nhatrang.jpg",
+    timelines: TimelineNT
 }
 
 export const Place2: Place = {
     id: 2,
     name: "Đà Nẵng",
     things: 140,
-    image: "./assets/nhatrang.jpg"
+    image: "./assets/danang.jpg",
+    timelines: TimelineDN
 }
 export const Place3: Place = {
     id: 3,
     name: "Hà Nội",
     things: 438,
-    image: "./assets/nhatrang.jpg"
+    image: "./assets/nhatrang.jpg",
+    timelines: TimelineNT
 }
 
-export const places = [Place1 , Place2, Place3]
+export const places = [Place1, Place2, Place3]
 
 export interface Account {
     id: number;
     username: string;
     name: string;
     premium: boolean;
-    password: string; 
+    password: string;
     image: string;
 }
 

@@ -1,4 +1,4 @@
-import { TimelineDN, TimelineNT } from "./data";
+import { TimelineDN, TimelineNT, TimelineHN } from "./data";
 
 const HCMToHN: Play = {
     id: 1,
@@ -80,7 +80,7 @@ export const Place3: Place = {
     name: "Hà Nội",
     things: 438,
     image: "./assets/nhatrang.jpg",
-    timelines: TimelineNT
+    timelines: TimelineHN
 }
 
 export const places = [Place1, Place2, Place3]

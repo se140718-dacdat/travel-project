@@ -79,7 +79,7 @@ export const Place3: Place = {
     id: 3,
     name: "Hà Nội",
     things: 438,
-    image: "./assets/nhatrang.jpg",
+    image: "./assets/hanoi.jpg",
     timelines: TimelineHN
 }
 

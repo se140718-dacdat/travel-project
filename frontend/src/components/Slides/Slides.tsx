@@ -7,7 +7,7 @@ import "./Slides.css"
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 const images = [
-    "./assets/Rectangle1.png",
+    "./assets/nhatrang-background.jpg",
     "./assets/Rectangle2.png",
     "./assets/Rectangle3.png",
     "./assets/Rectangle4.png",

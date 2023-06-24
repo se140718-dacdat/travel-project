@@ -57,8 +57,8 @@ const SelectPage = () => {
             case 2:
                 return (
                     <div className="content-main">
-                        <h1 className="heading-content">How can we help you?</h1>
-                        <div className='sub-heading-content'>Start Date: {startDate} - End Date: {endDate}</div>
+                        <h1 className="heading-content">Tôi Có Thể Giúp Gì Cho Bạn?</h1>
+                        <div className='sub-heading-content'>Bắt Đầu: {startDate} - Kết Thúc: {endDate}</div>
                         <div className="main-dashboard">
                             <button className='button-back button-sub' onClick={() => { setStep(1) }}>Trở về</button>
                             <div className="row3">
@@ -80,8 +80,8 @@ const SelectPage = () => {
             case 3:
                 return (
                     <div className="content-main">
-                        <h1 className="heading-content">Who are you traveling with?</h1>
-                        <div className='sub-heading-content'>Start Date: {startDate} - End Date: {endDate}</div>
+                        <h1 className="heading-content">Bạn Đi Du Lịch Cùng Ai?</h1>
+                        <div className='sub-heading-content'>Bắt Đầu: {startDate} - Kết Thúc: {endDate}</div>
                         <div className="main-dashboard">
                             <button className='button-back button-sub' onClick={() => { setStep(2) }}>Trở về</button>
                             <div className="row4">
@@ -106,8 +106,8 @@ const SelectPage = () => {
             case 4:
                 return (
                     <div className="content-main">
-                        <h1 className="heading-content">Which age group do you fall in?</h1>
-                        <div className='sub-heading-content'>Start Date: {startDate} - End Date: {endDate}</div>
+                        <h1 className="heading-content">Độ Tuổi Của Bạn?</h1>
+                        <div className='sub-heading-content'>Bắt Đầu: {startDate} - Kết Thúc: {endDate}</div>
                         <div className="main-dashboard">
                             <button className='button-back button-sub' onClick={() => { setStep(3) }}>Trở về</button>
                             <div className="col2-3">
@@ -152,7 +152,7 @@ const SelectPage = () => {
                                     <div className="place">
                                         <div className="place-name">
                                             <div className='city-name'>Thành phố Hồ Chí Minh</div>
-                                            <span>Ngày bắt đầu: {startDate}</span>
+                                            <span>bắt đầu: {startDate}</span>
                                         </div>
                                         <a className="place-edit link">(Chỉnh sửa)</a>
                                         <div className="place-icon">
@@ -172,7 +172,7 @@ const SelectPage = () => {
                                     <div className="place">
                                         <div className="place-name">
                                             <div className='city-name'>Thành phố Hồ Chí Minh</div>
-                                            <span>Ngày kết thúc: {endDate}</span>
+                                            <span>kết thúc: {endDate}</span>
                                         </div>
                                         <a className="place-edit link">(Chỉnh sửa)</a>
                                         <div className="place-icon">
